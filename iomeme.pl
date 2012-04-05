@@ -9,14 +9,16 @@ use Data::Dumper;
 
 my $top_text = <<EOSTR;
 if you try to participate
-if you try to participate
 EOSTR
 
 my $bottom_text = <<EOSTR;
-You're going to have a bad time
-You're going to have a bad time
+You're going to have a bad time You're going to have a bad time
+You're going to have a bad time You're going to have a bad time
+You're going to have a bad time You're going to have a bad time
+You're going to have a bad time You're going to have a bad time
+You're going to have a bad time You're going to have a bad time
+You're going to have a bad time You're going to have a bad time
 EOSTR
-
 
 my $image_filename = 'the-most-interesting-man-in-the-world.jpg';
 my $image_background = GD::Image->new($image_filename);
@@ -24,6 +26,22 @@ my ($width,$height) = $image_background->getBounds();
 
 my $top = render_text('top',uc($top_text),$width,($height/5));
 my $bottom = render_text('bottom',uc($bottom_text),$width,($height/5));
+
+my $bottom_position = (($height - 15) - $bottom->height);
+
+print "height is: " . $height . "\n";
+print "bottom height is: " . $bottom->height . "\n";
+print "bottom position: " . $bottom_position . "\n";
+
+
+$image_background->copy($top,0,15,0,0,$width,$height);
+$image_background->copy($bottom,0,$bottom_position,0,0,$width,$height);
+
+#Only here to test the test.
+open(GD, '>output.png') or die $!;
+binmode GD;
+print GD $image_background->png();
+close GD;
 
 sub render_text {
     my ($type,$text,$width,$height) = @_;
@@ -66,9 +84,13 @@ sub render_text {
 
         my ($b_x,$b_y,$b_width,$b_height) = $drawn_text->get_bounds(0,0);
 
-        #printf("type: %s image height: %d bounds height: %d\n",$type,$height,$b_height);
+        printf("type: %s image height: %d bounds height: %d font size: %d\n",
+            $type,$height,$b_height,$text_size);
 
         if ($height > $b_height) {
+            # trim the white space by resizing after the text has been applied
+            #
+            $gd->copy($gd,0,0,0,0,$width,$b_height);
             return $gd;
         }
 
@@ -77,15 +99,3 @@ sub render_text {
     }
 
 }
-
-my $bottom_position = (($height - 15) - $bottom->height);
-
-$image_background->copy($top,0,15,0,0,$width,$height);
-$image_background->copy($bottom,0,$bottom_position,0,0,$width,$height);
-
-#Only here to test the test.
-open(GD, '>output.png') or die $!;
-binmode GD;
-print GD $image_background->png();
-close GD;
-
