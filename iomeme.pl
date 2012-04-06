@@ -1,101 +1,130 @@
 #!/usr/bin/perl
 
 use strict;
-use warnings;
-
-use GD;
-use GD::Text::Wrap;
 use Data::Dumper;
+use Imager;
+use Imager::Font::Wrap;
 
-my $top_text = <<EOSTR;
+my $image = Imager->new();
+$image->read(file => 'the-most-interesting-man-in-the-world.jpg');
+
+my $font_size = get_font_size(
+    get_text(),
+    $image->getwidth,
+    ($image->getheight / 5)
+);
+
+render_text('bottom',$image,get_font(),get_text(),$font_size);
+
+$image->write(file=>'output.png')
+    or die 'Cannot save output.png: ', $image->errstr;
+
+sub get_font {
+    return Imager::Font->new(file=>'impact.ttf')
+        or die "Cannot load impact.ttf: ", Imager->errstr;
+}
+
+sub get_text {
+
+my $text = <<EOSTR;
 if you try to participate
 EOSTR
 
-my $bottom_text = <<EOSTR;
-You're going to have a bad time You're going to have a bad time
-You're going to have a bad time You're going to have a bad time
-You're going to have a bad time You're going to have a bad time
-You're going to have a bad time You're going to have a bad time
-You're going to have a bad time You're going to have a bad time
-You're going to have a bad time You're going to have a bad time
-EOSTR
+    return uc($text);
+}
 
-my $image_filename = 'the-most-interesting-man-in-the-world.jpg';
-my $image_background = GD::Image->new($image_filename);
-my ($width,$height) = $image_background->getBounds();
+sub get_font_size {
 
-my $top = render_text('top',uc($top_text),$width,($height/5));
-my $bottom = render_text('bottom',uc($bottom_text),$width,($height/5));
+    my ($text,$width,$height) = @_;
 
-my $bottom_position = (($height - 15) - $bottom->height);
-
-print "height is: " . $height . "\n";
-print "bottom height is: " . $bottom->height . "\n";
-print "bottom position: " . $bottom_position . "\n";
-
-
-$image_background->copy($top,0,15,0,0,$width,$height);
-$image_background->copy($bottom,0,$bottom_position,0,0,$width,$height);
-
-#Only here to test the test.
-open(GD, '>output.png') or die $!;
-binmode GD;
-print GD $image_background->png();
-close GD;
-
-sub render_text {
-    my ($type,$text,$width,$height) = @_;
-
+    my $adjusted_height = ($height / 5);
     my $text_size = 50;
+    my $font = get_font();
 
     while (1) {
 
-        my $gd = GD::Image->new($width,$height);
-
-        # Allocate colours
-        my $offwhite = $gd->colorAllocate(250,255,255);
-        my $white = $gd->colorAllocate(255,255,255);
-        my $black = $gd->colorAllocate(0,0,0);
-
-        $gd->transparent($offwhite);
-        $gd->interlaced('true');
-
-        my $drawn_text = GD::Text::Wrap->new($gd,
-            color => $black,
-            text => $text,
-            align => 'center',
-            font => 'impact.ttf',
-            ptsize => $text_size
+        my (undef,undef,$b_width,$b_height) = Imager::Font::Wrap->wrap_text(
+            image  => undef,
+            font   => $font,
+            string => $text,
+            size => $text_size,
+            color => 'white',
+            justify => 'center',
+            width => $width,
+            height => $adjusted_height
         );
 
-        my ($x,$y) = (0,0);
-        # draw the text border
-        #
-        $drawn_text->set('color',$black);
-        $drawn_text->draw($x - 1,$y - 1);
-        $drawn_text->draw($x + 1,$y - 1);
-        $drawn_text->draw($x - 1,$y + 1);
-        $drawn_text->draw($x + 1,$y + 1);
+        if ($b_height > $adjusted_height) {
 
-        # draw the text overlay
-        #
-        $drawn_text->set('color',$white);
-        $drawn_text->draw($x,$y);
+            $text_size = $text_size - 1;
 
-        my ($b_x,$b_y,$b_width,$b_height) = $drawn_text->get_bounds(0,0);
+        } else {
 
-        printf("type: %s image height: %d bounds height: %d font size: %d\n",
-            $type,$height,$b_height,$text_size);
+            return $text_size;
 
-        if ($height > $b_height) {
-            # trim the white space by resizing after the text has been applied
-            #
-            $gd->copy($gd,0,0,0,0,$width,$b_height);
-            return $gd;
         }
-
-        $text_size = $text_size - 1;
 
     }
 
 }
+
+sub get_text_start_pos {
+
+    my ($type,$width,$height) = @_;
+
+    if ($type eq 'bottom') {
+        my $y_pos = ($height - ($height / 5) );
+        return(0,$y_pos);
+    }
+
+    return (0,0);
+}
+
+sub render_text {
+
+    my ($type,$image,$font,$text,$text_size) = @_;
+
+    my ($x,$y) = get_text_start_pos($type,$image->getwidth,$image->getheight);
+
+    my $pos = [
+        [($x - 1),($y - 1)],
+        [($x - 2),($y - 1)],
+        [($x + 1),($y - 1)],
+        [($x + 2),($y - 1)],
+        [($x - 1),($y - 1)],
+        [($x - 1),($y + 2)],
+        [($x + 1),($y + 1)],
+    ];
+
+    my $options = {
+        image  => $image,
+        height => ($image->getheight/5),
+        font   => $font,
+        string => $text,
+        size => $text_size,
+        justify => 'center'
+    };
+
+    # used to add a border to the text
+    #
+    for (my $i = 0; $i < @$pos; $i++) {
+
+        $options->{'x'} = $pos->[$i][0];
+        $options->{'y'} = $pos->[$i][1];
+        $options->{'color'} = 'black';
+
+        Imager::Font::Wrap->wrap_text(%$options)
+            or die "wrap_text died", $image->errstr;
+
+    }
+
+    # the final wrap_text draws the white text ontop of
+    # the black text
+    #
+    $options->{'color'} = 'white';
+
+    Imager::Font::Wrap->wrap_text(%$options)
+        or die "wrap_text died", $image->errstr;
+
+}
+
