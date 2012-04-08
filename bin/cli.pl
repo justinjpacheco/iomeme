@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use strict;
 use lib qw/lib/;
@@ -10,6 +10,6 @@ my $meme = iomeme->new(
     bottom => 'world',
 );
 
-open(IMG,'>/tmp/output.jpg');
+open(IMG,'>/tmp/output.' . $meme->format);
     print IMG $meme->render();
 close(IMG);
