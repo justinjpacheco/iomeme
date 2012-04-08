@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 use strict;
+use lib qw/lib/;
 use iomeme;
 
 my $meme = iomeme->new(
@@ -9,6 +10,6 @@ my $meme = iomeme->new(
     bottom => 'world',
 );
 
-open(IMG,'>output.jpg');
+open(IMG,'>/tmp/output.jpg');
     print IMG $meme->render();
 close(IMG);
