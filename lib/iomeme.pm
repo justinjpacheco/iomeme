@@ -22,6 +22,8 @@ package iomeme;
         builder => '_build_font'
     );
 
+    has 'format' => (isa => 'Str', is => 'rw');
+
     sub BUILD {
         my $self = shift;
 
@@ -34,6 +36,9 @@ package iomeme;
 
         $self->image($image);
 
+        # set the image format
+        #
+        $self->format($self->image->tags( name => 'i_format' ));
     }
 
     sub insert_string {
@@ -216,7 +221,7 @@ package iomeme;
         my $image = $self->image;
 
         if (!$top && !$bottom) {
-            $image->write( data => \$image_data, type => 'jpeg' )
+            $image->write( data => \$image_data, type => $self->format )
                 or die 'failed to write image: ', $image->errstr;
 
             return $image_data;
@@ -230,7 +235,7 @@ package iomeme;
             $image_data = $self->insert_string(BOTTOM,$bottom);
         }
 
-        $image->write( data => \$image_data, type => 'jpeg' )
+        $image->write( data => \$image_data, type => $self->format )
             or die 'failed to write image: ', $image->errstr;
 
         return $image_data;
