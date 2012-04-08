@@ -200,7 +200,7 @@ package iomeme;
 
         if ($type eq TOP) {
             $strprm->{x} = 0;
-            $strprm->{y} = 15;
+            $strprm->{y} = 0;
         }
 
         if ($type eq BOTTOM) {
@@ -245,10 +245,27 @@ package iomeme;
     sub get_memes {
 
         my $memes = {
+
             tmimitw => {
-                type => 'jpeg',
                 template => 'templates/the-most-interesting-man-in-the-world.jpg'
-            }
+            },
+
+            odns => {
+                template => 'templates/one-does-not-simply.jpg'
+            },
+
+            sk => {
+                template => 'templates/success-kid.jpg'
+            },
+
+            ss => {
+                template => 'templates/scumbag-steve.jpg'
+            },
+
+            fwp => {
+                template => 'templates/first-world-problems.jpg'
+            },
+
         };
 
         return $memes;
