@@ -10,14 +10,11 @@ package iomeme;
 
     has 'meme' => ( isa => 'Str', is => 'rw', required => 1);
 
-    has 'image' => (
-        isa => 'Imager',
-        is => 'rw'
-    );
+    has 'image' => ( isa => 'Imager', is => 'rw');
 
-    has 'top' => ( isa => 'Str', is => 'rw');
+    has 'top' => ( isa => 'Str', is => 'rw',);
+
     has 'bottom' => ( isa => 'Str', is => 'rw');
-    has 'string_boundries' => ( isa => 'HASH', is => 'rw');
 
     has 'font' => (
         isa => 'Imager::Font',
@@ -61,7 +58,7 @@ package iomeme;
         my $string_height = $strprm->{string_height};
 
         my $pos = [];
-        my $thickness = 2;
+        my $thickness = 3;
 
         for (my $i = 0; $i < $thickness; $i++) {
             my ($xos,$yos) = undef;
@@ -210,7 +207,6 @@ package iomeme;
 
     }
 
-
     sub render {
         my $self = shift;
 
@@ -267,17 +263,10 @@ package iomeme;
 
     sub _build_font {
         my $self = shift;
-
         my $fontfile = 'fonts/impact.ttf';
         my $font = Imager::Font->new(file => $fontfile);
-
-        if (Imager->errstr) {
-            die "Cannot load " . $fontfile . ": ", ;
-        }
-
         return $font;
     }
-
 
     __PACKAGE__->meta->make_immutable();
 
