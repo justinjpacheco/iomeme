@@ -1,1 +1,1 @@
-sudo apt-get install libimager-perl
+sudo apt-get install libimager-perl libmojolicious-perl
