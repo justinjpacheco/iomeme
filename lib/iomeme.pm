@@ -246,7 +246,7 @@ package iomeme;
         my $memes = {
             tmimitw => {
                 type => 'jpeg',
-                template => 'the-most-interesting-man-in-the-world.jpg'
+                template => 'templates/the-most-interesting-man-in-the-world.jpg'
             }
         };
 
@@ -268,7 +268,7 @@ package iomeme;
     sub _build_font {
         my $self = shift;
 
-        my $fontfile = 'impact.ttf';
+        my $fontfile = 'fonts/impact.ttf';
         my $font = Imager::Font->new(file => $fontfile);
 
         if (Imager->errstr) {
