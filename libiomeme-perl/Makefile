@@ -12,7 +12,7 @@ package:
 
 install:
 
-	make clean && make && sudo dpkg -i libiomeme*.deb && make clean
+	make clean && make && sudo dpkg -i *.deb && make clean
 
 uninstall:
 
