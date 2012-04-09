@@ -8,6 +8,14 @@ package:
 
 	fakeroot dpkg-deb --build build libiomeme-perl-$(VERSION).deb
 
+install:
+
+	make && sudo dpkg -i libiomeme*.deb
+
+uninstall:
+
+	sudo dpkg -P libiomeme-perl
+
 clean:
 
 	rm -rf build/ *.deb
