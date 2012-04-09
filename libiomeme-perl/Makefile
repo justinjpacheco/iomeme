@@ -2,6 +2,8 @@ VERSION = 0.01
 
 package:
 
+	make clean
+
 	mkdir build
 	cp -r usr build/
 	cp -r DEBIAN build/
@@ -10,7 +12,7 @@ package:
 
 install:
 
-	make && sudo dpkg -i libiomeme*.deb
+	make clean && make && sudo dpkg -i libiomeme*.deb
 
 uninstall:
 
