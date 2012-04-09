@@ -1,1 +1,1 @@
-sudo apt-get install libmoose-perl libimager-perl libmojolicious-perl nginx
+sudo apt-get install libmoose-perl libimager-perl
