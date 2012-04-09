@@ -1,0 +1,8 @@
+Package: wwwiomeme-perl
+Version: 0.01
+Section: perl
+Architecture: all
+Depends: nginx,
+         libmojolicious-perl
+Maintainer: Justin Pacheco (justinjpacheco@gmail.com)
+Description: website for iomeme (yet another meme generator)
