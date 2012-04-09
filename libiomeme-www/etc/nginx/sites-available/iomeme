@@ -6,7 +6,7 @@ server {
 
   listen 80;
 
-  server_name localhost;
+  server_name *.iome.me;
 
   location / {
     proxy_read_timeout 300;
