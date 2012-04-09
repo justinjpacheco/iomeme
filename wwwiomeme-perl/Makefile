@@ -12,7 +12,7 @@ package:
 
 install:
 
-	make clean && make && sudo dpkg -i wwwiomeme*.deb
+	make clean && make && sudo dpkg -i wwwiomeme*.deb && make clean
 
 uninstall:
 
