@@ -244,26 +244,28 @@ package iomeme;
 
     sub get_memes {
 
+        my $path = '/usr/share/templates/iomeme/';
+
         my $memes = {
 
             tmimitw => {
-                template => 'templates/the-most-interesting-man-in-the-world.jpg'
+                template => $path . 'the-most-interesting-man-in-the-world.jpg'
             },
 
             odns => {
-                template => 'templates/one-does-not-simply.jpg'
+                template => $path . 'one-does-not-simply.jpg'
             },
 
             sk => {
-                template => 'templates/success-kid.jpg'
+                template => $path . 'success-kid.jpg'
             },
 
             ss => {
-                template => 'templates/scumbag-steve.jpg'
+                template => $path . 'scumbag-steve.jpg'
             },
 
             fwp => {
-                template => 'templates/first-world-problems.jpg'
+                template => $path . 'first-world-problems.jpg'
             },
 
         };
@@ -285,8 +287,9 @@ package iomeme;
 
     sub _build_font {
         my $self = shift;
-        my $fontfile = 'fonts/impact.ttf';
-        my $font = Imager::Font->new(file => $fontfile);
+        my $path = '/usr/share/fonts/iomeme/';
+        my $fontfile = 'impact.ttf';
+        my $font = Imager::Font->new(file => $path . $fontfile);
         return $font;
     }
 
