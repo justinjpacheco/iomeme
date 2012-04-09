@@ -1,0 +1,54 @@
+#!/bin/sh
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/bin/hypnotoad
+NAME=iomeme
+DESC=iomeme
+
+DAEMON_OPTS=/home/jpacheco/workspace/iomeme.git/libiomeme-perl/bin/www.pl
+
+test -x $DAEMON || exit 0
+
+set -e
+
+. /lib/lsb/init-functions
+
+case "$1" in
+	start)
+		echo -n "Starting $DESC: "
+
+		start-stop-daemon --start --quiet --pidfile \
+                    /var/run/iomeme/hypnotoad.pid \
+		    --exec $DAEMON -- $DAEMON_OPTS || true
+
+		echo "$NAME."
+		;;
+
+	stop)
+		echo -n "Stopping $DESC: "
+
+		start-stop-daemon --stop --quiet --pidfile \
+                    /var/run/iomeme/hypnotoad.pid \
+		    --exec $DAEMON || true
+
+		echo "$NAME."
+		;;
+
+	restart|force-reload)
+		echo -n "Restarting $DESC: "
+
+		start-stop-daemon --stop --quiet --pidfile \
+                    /var/run/iomeme/hypnotoad.pid \
+                    --exec $DAEMON || true
+		sleep 1
+
+		start-stop-daemon --start --quiet --pidfile \
+                    /var/run/iomeme/hypnotoad.pid \
+                    --exec $DAEMON -- $DAEMON_OPTS || true
+
+		echo "$NAME."
+		;;
+
+esac
+
+exit 0
