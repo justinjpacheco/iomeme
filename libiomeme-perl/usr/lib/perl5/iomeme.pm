@@ -27,9 +27,14 @@ sub BUILD {
     my $self = shift;
 
     my $memes = $self->get_memes();
-    my $meme = $memes->{$self->meme};
+
+    # FIXME: what should we do if the meme doesn't exist?
+    #
+    my $meme = $memes->{$self->meme} || $memes->{'tid'};
     my $image = Imager->new();
 
+    # FIXME: better error handling
+    #
     $image->read(file => $meme->{template})
         or die 'failed to read template: ', $image->errstr;
 
@@ -246,27 +251,80 @@ sub get_memes {
     my $path = '/usr/share/templates/iomeme/';
 
     my $memes = {
-
-        tmimitw => {
-            template => $path . 'the-most-interesting-man-in-the-world.jpg'
-        },
-
-        odns => {
-            template => $path . 'one-does-not-simply.jpg'
-        },
-
-        sk => {
-            template => $path . 'success-kid.jpg'
-        },
-
-        ss => {
-            template => $path . 'scumbag-steve.jpg'
-        },
-
-        fwp => {
-            template => $path . 'first-world-problems.jpg'
-        },
-
+        ad => { template => $path . 'advice-dog.jpg' },
+        ag => { template => $path . 'advice-god.jpg' },
+        acf => { template => $path . 'annoying-childhood-friend.jpg' },
+        afg => { template => $path . 'annoying-facebook-girl.jpg' },
+        ajc => { template => $path . 'anti-joke-chicken.jpg' },
+        aso => { template => $path . 'art-student-owl.jpg' },
+        bac => { template => $path . 'bad-advice-cat.jpg' },
+        blb => { template => $path . 'bad-luck-brian.jpg' },
+        bg => { template => $path . 'bear-grylls.jpg' },
+        bo => { template => $path . 'bill-oreilly.jpg' },
+        byxic => { template => $path . 'brace-yourselves-x-is-coming.jpg' },
+        bc => { template => $path . 'business-cat.jpg' },
+        bd => { template => $path . 'butthurt-dweller.jpg' },
+        cc => { template => $path . 'chemistry-cat.jpg' },
+        cf => { template => $path . 'college-freshman.jpg' },
+        ck => { template => $path . 'conspiracy-keanu.jpg' },
+        cw => { template => $path . 'courage-wolf.jpg' },
+        cgpm => { template => $path . 'crazy-girlfriend-praying-mantis.jpg' },
+        ccw => { template => $path . 'creepy-condescending-wonka.jpg' },
+        dsm => { template => $path . 'dating-site-murderer.jpg' },
+        dd => { template => $path . 'depression-dog.jpg' },
+        dr => { template => $path . 'downvoting-roman.jpg' },
+        ds => { template => $path . 'dwight-schrute.jpg' },
+        ftsg => { template => $path . 'family-tech-support-guy.jpg' },
+        fa => { template => $path . 'forever-alone.jpg' },
+        fbf => { template => $path . 'foul-bachelor-frog.jpg' },
+        fbtf => { template => $path . 'foul-bachelorette-frog.jpg' },
+        ff => { template => $path . 'futurama-fry.jpg' },
+        fwp => { template => $path . 'first-world-problems.jpg' },
+        fz => { template => $path . 'futurama-zoidberg.jpg' },
+        ggg => { template => $path . 'good-guy-greg.jpg' },
+        gfti => { template => $path . 'grandma-finds-the-internet.jpg' },
+        h => { template => $path . 'hawkward.jpg' },
+        htd => { template => $path . 'helpful-tyler-durden.jpg' },
+        heaf => { template => $path . 'high-expectations-asian-father.jpg' },
+        hk => { template => $path . 'hipster-kitty.jpg' },
+        iw => { template => $path . 'insanity-wolf.jpg' },
+        jd => { template => $path . 'joseph-ducreux.jpg' },
+        kk => { template => $path . 'karate-kyle.jpg' },
+        lpc => { template => $path . 'lame-pun-coon.jpg' },
+        moeg => { template => $path . 'musically-oblivious-8th-grader.jpg' },
+        nn => { template => $path . 'net-noob.jpg' },
+        odns => { template => $path . 'one-does-not-simply.jpg' },
+        og => { template => $path . 'office-grizzly.jpg' },
+        omm => { template => $path . 'ordinary-muslim-man.jpg' },
+        pp => { template => $path . 'paranoid-parrot.jpg' },
+        p => { template => $path . 'pedobear.jpg' },
+        pr => { template => $path . 'philosoraptor.jpg' },
+        plp => { template => $path . 'pickup-line-panda.jpg' },
+        pcb => { template => $path . 'ptsd-clarinet-boy.jpg' },
+        pisep => { template => $path . 'put-it-somewhere-else-patrick.jpg' },
+        rst => { template => $path . 'rasta-science-teacher.jpg' },
+        rw => { template => $path . 'redditors-wife.jpg' },
+        rr => { template => $path . 'redneck-randal.jpg' },
+        rrv => { template => $path . 'rich-raven.jpg' },
+        rpg => { template => $path . 'ridiculously-photogenic-guy.jpg' },
+        sg => { template => $path . 'scumbag-girl.jpg' },
+        sk => { template => $path . 'success-kid.jpg' },
+        ss => { template => $path . 'scumbag-steve.jpg' },
+        sor => { template => $path . 'sexually-oblivious-rhino.jpg' },
+        ssm => { template => $path . 'sheltering-suburban-mom.jpg' },
+        sp => { template => $path . 'slowpoke.jpg' },
+        sawp => { template => $path . 'socially-awesome-penguin.jpg' },
+        saap => { template => $path . 'socially-awkward-awesome-penguin.jpg' },
+        sap => { template => $path . 'socially-awkward-penguin.jpg' },
+        sd => { template => $path . 'stoner-dog.jpg' },
+        sbm => { template => $path . 'successful-black-man.jpg' },
+        tid => { template => $path . 'tech-impaired-duck.jpg' },
+        tmicitw => { template => $path . 'the-most-interesting-cat-in-the-world.jpg' },
+        tmimitw => { template => $path . 'the-most-interesting-man-in-the-world.jpg' },
+        tdh => { template => $path . 'too-damn-high.jpg' },
+        uht => { template => $path . 'unhelpful-highschool-teacher.jpg' },
+        xaty => { template => $path . 'x-all-the-y.jpg' },
+        yun => { template => $path . 'y-u-no.jpg' },
     };
 
     return $memes;
