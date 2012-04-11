@@ -8,7 +8,11 @@ server {
 
   server_name *.iome.me;
 
-  location / {
+  location ~ ^/$ {
+    rewrite ^ http://www.$host;
+  }
+
+  location ~ ^/.*$ {
     proxy_read_timeout 300;
     proxy_pass http://iomeme;
     proxy_set_header Host $host;
