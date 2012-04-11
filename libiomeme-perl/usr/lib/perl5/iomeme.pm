@@ -1,7 +1,6 @@
 package iomeme;
 
     use Moose;
-    use Moose::Util::TypeConstraints;
     use Imager;
     use Imager::Font::Wrap;
 
