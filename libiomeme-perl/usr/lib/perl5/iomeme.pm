@@ -310,6 +310,7 @@ sub get_memes {
         sg => { template => $path . 'scumbag-girl.jpg' },
         sk => { template => $path . 'success-kid.jpg' },
         ss => { template => $path . 'scumbag-steve.jpg' },
+        sbg => { template => $path . 'sad-birthday-girl.jpg' },
         sor => { template => $path . 'sexually-oblivious-rhino.jpg' },
         ssm => { template => $path . 'sheltering-suburban-mom.jpg' },
         sp => { template => $path . 'slowpoke.jpg' },
