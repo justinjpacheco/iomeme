@@ -7,24 +7,28 @@ use Mojo::Util qw/url_unescape/;
 use Cache::FastMmap;
 use Mojolicious::Lite;
 
-# Uses vaguely sane defaults
 my $cache = Cache::FastMmap->new();
 
 get '/*' => sub {
     my $self = shift;
 
-    my $url_path = Mojo::Util::url_unescape($self->req->url);
+    my $headers = $self->req->content->headers;
+    my $request_url = $self->req->url;
+    my $original_request_url = $headers->header('X-Original-URL');
 
-    use Data::Dumper;
-    $self->app->log->debug(Dumper $sef->req->env);
-    $self->app->log->debug(Dumper $self->req->content->headers->to_string);
-    #$self->app->log->debug(Dumper %ENV);
+    if ($original_request_url) {
+        $request_url = Mojo::Util::url_unescape($original_request_url);
+    }
 
     # remove leading / from url path
     #
-    $url_path =~ s/^\///;
+    $request_url =~ s/^\///;
 
-    my ($type,$top,$bottom) = split('/',$url_path);
+    # replace + with spaces
+    #
+    $request_url =~ s/\+/ /g;
+
+    my ($type,$top,$bottom) = split('/',$request_url);
 
     my $key = $type.$top.$bottom;
 
