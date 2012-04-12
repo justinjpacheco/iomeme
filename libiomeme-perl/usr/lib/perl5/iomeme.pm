@@ -174,7 +174,7 @@ sub get_string_parameters {
     my $sheight = undef;
     my $strprm = {};
 
-    my $adjusted_image_height = ($image_height / 5);
+    my $adjusted_image_height = ($image_height / 3);
 
     while (1) {
 
