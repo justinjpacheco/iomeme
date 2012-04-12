@@ -1,2 +1,3 @@
 sudo apt-get install libmojolicious-perl nginx
 sudo dpkg -i libiomeme-perl
+sudo apt-get install libcache-fastmmap-perl
