@@ -342,9 +342,9 @@ sub get_memes {
             desc => "http://knowyourmeme.com/memes/crazy-girlfriend-praying-mantis"
         },
         ccc => {
-            name => "Cool chick carol",
+            name => "Cool chick Carol",
             template => $path . 'cool-chick-carol.jpg',
-            desc => "http://knowyourmeme.com/memes/crazy-girlfriend-praying-mantis"
+            desc => "http://knowyourmeme.com/memes/cool-chick-carol"
         },
         dsm => {
             name => "Dating site murderer",
