@@ -3,18 +3,21 @@ use strict;
 
 use iomeme;
 use Mojo::URL;
-use Mojo::Util qw/url_unescape/;
 use Cache::FastMmap;
 use Mojolicious::Lite;
+use Mojo::Util qw/url_unescape/;
 
 my $cache = Cache::FastMmap->new();
 
 get '/*' => sub {
     my $self = shift;
 
+    my ($image_data,$image_format) = undef;
+
     my $headers = $self->req->content->headers;
-    my $request_url = $self->req->url;
     my $original_request_url = $headers->header('X-Original-URL');
+
+    my $request_url = $self->req->url;
 
     if ($original_request_url) {
         $request_url = Mojo::Util::url_unescape($original_request_url);
@@ -30,9 +33,9 @@ get '/*' => sub {
 
     my ($type,$top,$bottom) = split('/',$request_url);
 
+    # we use this key as an index to our cache store
+    #
     my $key = $type.$top.$bottom;
-
-    my ($image_data,$image_format) = undef;
 
     if ($cache->get($key)) {
 
@@ -41,8 +44,8 @@ get '/*' => sub {
     } else {
 
         my $meme = get_meme($type,$top,$bottom);
-        $cache->set($key,[$meme->render,$meme->format]);
-        ($image_data,$image_format) = @{$cache->get($key)};
+        ($image_data,$image_format) = ($meme->render,$meme->format);
+        $cache->set($key,[$image_data,$image_format]);
 
     }
 
