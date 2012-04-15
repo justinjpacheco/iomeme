@@ -2,7 +2,6 @@
 use strict;
 
 use iomeme;
-use Mojo::URL;
 use Cache::FastMmap;
 use Mojolicious::Lite;
 use Mojo::Util qw/url_unescape/;
