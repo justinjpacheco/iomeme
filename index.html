@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>iomeme by justinjpacheco</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/justinjpacheco/iomeme">Fork On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/justinjpacheco/iomeme/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/justinjpacheco/iomeme/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>iomeme</h1>
+          <p>A fast and easy way to create the Internet's most popular memes</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/justinjpacheco">justinjpacheco</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h2>About</h2>
+
+<p><a href="http://iome.me">iome.me</a> is a web service used to quickly create the Internet's most popular memes</p>
+
+<h2>Examples</h2>
+
+<ul>
+<li><a href="http://iome.me/ss">http://iome.me/ss</a></li>
+<li><a href="http://iome.me/ss/hello">http://iome.me/ss/hello</a></li>
+<li><a href="http://iome.me/ss/hello/world">http://iome.me/ss/hello/world</a></li>
+</ul><h2>Usage</h2>
+
+<p>Every <a href="http://iome.me">iome.me</a> request takes three parameters:</p>
+
+<blockquote>
+<p>/type/top/bottom</p>
+</blockquote>
+
+<p>Where:</p>
+
+<ul>
+<li>type (the type of meme) <strong>required</strong>
+</li>
+<li>top (top text) <em>optional</em>
+</li>
+<li>bottom (bottom text) <em>optional</em>
+</li>
+</ul><h3>Inserting spaces</h3>
+
+<p>You can use a "+" to insert a space into your text</p>
+
+<ul>
+<li><a href="http://iome.me/ss/hello+world">http://iome.me/ss/hello+world</a></li>
+</ul><p>Or you can use the url escaped value (%20)</p>
+
+<ul>
+<li><a href="http://iome.me/ss/hello%20world">http://iome.me/ss/hello%20world</a></li>
+</ul><h2>Uploading to Imgur</h2>
+
+<p>When uploading images to <a href="http://imgur.com/">Imgur</a>, you can add "/.jpg" to the end of your iome.me url like so</p>
+
+<ul>
+<li><a href="http://iome.me/sk/uploads+to+imgur/it+works/.jpg">http://iome.me/sk/uploads+to+imgur/it+works/.jpg</a></li>
+</ul><p>We have to do this because Imgur expects the file extension to be at the end of the URL.</p>
+
+<h2>Supported Types</h2>
+
+<ul>
+<li>
+<a href="http://iome.me/ad">Advice dog</a> (<a href="http://knowyourmeme.com/memes/advice-dog">About</a>)</li>
+<li>
+<a href="http://iome.me/ag">Advice God</a> (<a href="http://knowyourmeme.com/memes/advice-god">About</a>)</li>
+<li>
+<a href="http://iome.me/acf">Annoying childhood friend</a> (<a href="http://knowyourmeme.com/memes/annoying-childhood-friend">About</a>)</li>
+<li>
+<a href="http://iome.me/afg">Annoying facebook girl</a> (<a href="http://knowyourmeme.com/memes/annoying-facebook-girl">About</a>)</li>
+<li>
+<a href="http://iome.me/ajc">Anti-joke chicken</a> (<a href="http://knowyourmeme.com/memes/anti-joke-chicken">About</a>)</li>
+<li>
+<a href="http://iome.me/aso">Art student owl</a> (<a href="http://knowyourmeme.com/memes/art-student-owl">About</a>)</li>
+<li>
+<a href="http://iome.me/bac">Bad advice cat</a> (<a href="http://knowyourmeme.com/memes/bad-advice-cat">About</a>)</li>
+<li>
+<a href="http://iome.me/blb">Bad luck Brian</a> (<a href="http://knowyourmeme.com/memes/bad-luck-brian">About</a>)</li>
+<li>
+<a href="http://iome.me/bg">Bear Grylls</a> (<a href="http://knowyourmeme.com/memes/bear-grylls-better-drink-my-own-piss">About</a>)</li>
+<li>
+<a href="http://iome.me/bo">Bill Oreilly</a> (<a href="http://knowyourmeme.com/memes/bill-oreilly-you-cant-explain-that">About</a>)</li>
+<li>
+<a href="http://iome.me/bc">Business cat</a> (<a href="http://knowyourmeme.com/memes/business-cat">About</a>)</li>
+<li>
+<a href="http://iome.me/bd">Butthurt Dweller</a> (<a href="http://knowyourmeme.com/memes/butthurt-dweller-gordo-granudo">About</a>)</li>
+<li>
+<a href="http://iome.me/ch">Captain hindsight</a> (<a href="http://knowyourmeme.com/memes/captain-hindsight">About</a>)</li>
+<li>
+<a href="http://iome.me/cc">Chemistry cat</a> (<a href="http://knowyourmeme.com/memes/chemistry-cat">About</a>)</li>
+<li>
+<a href="http://iome.me/cf">College freshman</a> (<a href="http://knowyourmeme.com/memes/uber-frosh-college-freshman">About</a>)</li>
+<li>
+<a href="http://iome.me/ck">Conspiracy Keanu</a> (<a href="http://knowyourmeme.com/memes/conspiracy-keanu">About</a>)</li>
+<li>
+<a href="http://iome.me/ccc">Cool chick Carol</a> (<a href="http://knowyourmeme.com/memes/cool-chick-carol">About</a>)</li>
+<li>
+<a href="http://iome.me/cw">Courage wolf</a> (<a href="http://knowyourmeme.com/memes/courage-wolf">About</a>)</li>
+<li>
+<a href="http://iome.me/cgpm">Crazy girlfriend praying mantis</a> (<a href="http://knowyourmeme.com/memes/crazy-girlfriend-praying-mantis">About</a>)</li>
+<li>
+<a href="http://iome.me/ccw">Creepy condescending Wonka</a> (<a href="http://knowyourmeme.com/memes/condescending-wonka-creepy-wonka">About</a>)</li>
+<li>
+<a href="http://iome.me/dsm">Dating site murderer</a> (<a href="http://knowyourmeme.com/memes/dating-site-murderer-good-intentions-axe-murderer">About</a>)</li>
+<li>
+<a href="http://iome.me/dd">Depression dog</a> (<a href="http://knowyourmeme.com/memes/depression-dog">About</a>)</li>
+<li><a href="http://iome.me/dvt">Domestic violence turtle</a></li>
+<li>
+<a href="http://iome.me/dr">Downvoting Roman</a> (<a href="http://knowyourmeme.com/memes/downvoting-roman-commodus-thumbsdown">About</a>)</li>
+<li>
+<a href="http://iome.me/ds">Dwight Schrute</a> (<a href="http://knowyourmeme.com/memes/schrute-facts">About</a>)</li>
+<li>
+<a href="http://iome.me/ftsg">Family tech support guy</a> (<a href="http://knowyourmeme.com/memes/family-technical-support">About</a>)</li>
+<li>
+<a href="http://iome.me/fdotik">First day on the Internet kid</a> (<a href="http://knowyourmeme.com/memes/first-day-on-the-internet-kid">About</a>)</li>
+<li>
+<a href="http://iome.me/fwp">First world problems</a> (<a href="http://knowyourmeme.com/memes/first-world-problems">About</a>)</li>
+<li>
+<a href="http://iome.me/fa">Forever alone</a> (<a href="http://knowyourmeme.com/memes/forever-alone">About</a>)</li>
+<li>
+<a href="http://iome.me/fbtf">Foul bachelorette frog</a> (<a href="http://knowyourmeme.com/memes/foul-bachelorette-frog">About</a>)</li>
+<li>
+<a href="http://iome.me/fbf">Foul bachelor frog</a> (<a href="http://knowyourmeme.com/memes/foul-bachelor-frog">About</a>)</li>
+<li>
+<a href="http://iome.me/ff">Futurama Fry</a> (<a href="http://knowyourmeme.com/memes/futurama-fry-not-sure-if-x">About</a>)</li>
+<li>
+<a href="http://iome.me/fz">Futurama Zoidberg</a> (<a href="http://knowyourmeme.com/memes/futurama-zoidberg-why-not-zoidberg">About</a>)</li>
+<li>
+<a href="http://iome.me/gggi">Good girl Gina</a> (<a href="http://knowyourmeme.com/memes/good-girl-gina">About</a>)</li>
+<li>
+<a href="http://iome.me/ggg">Good guy Greg</a> (<a href="http://knowyourmeme.com/memes/good-guy-greg">About</a>)</li>
+<li>
+<a href="http://iome.me/gfti">Grandma finds the Internet</a> (<a href="http://knowyourmeme.com/memes/internet-grandma-surprise">About</a>)</li>
+<li>
+<a href="http://iome.me/htd">Helpful Tyler Durden</a> (<a href="http://knowyourmeme.com/memes/disruptive-durden-helpful-tyler-durden">About</a>)</li>
+<li>
+<a href="http://iome.me/heaf">High expectations asian father</a> (<a href="http://knowyourmeme.com/memes/high-expectations-asian-father">About</a>)</li>
+<li>
+<a href="http://iome.me/hb">Hipster barista</a> (<a href="http://knowyourmeme.com/memes/hipster-barista">About</a>)</li>
+<li>
+<a href="http://iome.me/hk">Hipster kitty</a> (<a href="http://knowyourmeme.com/memes/hipster-kitty">About</a>)</li>
+<li>
+<a href="http://iome.me/ing">Idiot nerd girl</a> (<a href="http://knowyourmeme.com/memes/idiot-nerd-girl">About</a>)</li>
+<li>
+<a href="http://iome.me/in">Imminent Ned</a> (<a href="http://knowyourmeme.com/memes/imminent-ned-brace-yourselves-x-is-coming">About</a>)</li>
+<li>
+<a href="http://iome.me/iw">Insanity wolf</a> (<a href="http://knowyourmeme.com/memes/insanity-wolf">About</a>)</li>
+<li>
+<a href="http://iome.me/ih">Internet husband</a> (<a href="http://knowyourmeme.com/memes/internet-husband">About</a>)</li>
+<li>
+<a href="http://iome.me/jd">Joseph Ducreux</a> (<a href="http://knowyourmeme.com/memes/joseph-ducreux-archaic-rap">About</a>)</li>
+<li>
+<a href="http://iome.me/kk">Karate Kyle</a> (<a href="http://knowyourmeme.com/memes/karate-kyle">About</a>)</li>
+<li>
+<a href="http://iome.me/lpc">Lame pun coon</a> (<a href="http://knowyourmeme.com/memes/lame-pun-coon">About</a>)</li>
+<li>
+<a href="http://iome.me/moeg">Musically oblivious 8th grader</a> (<a href="http://knowyourmeme.com/memes/musically-oblivious-8th-grader">About</a>)</li>
+<li>
+<a href="http://iome.me/nn">Net noob</a> (<a href="http://knowyourmeme.com/memes/lonely-computer-guy-net-noob">About</a>)</li>
+<li>
+<a href="http://iome.me/og">Office grizzly</a> (<a href="http://knowyourmeme.com/memes/office-grizzly">About</a>)</li>
+<li>
+<a href="http://iome.me/odns">One does not simply</a> (<a href="http://knowyourmeme.com/memes/one-does-not-simply-walk-into-mordor">About</a>)</li>
+<li>
+<a href="http://iome.me/omm">Ordinary muslim man</a> (<a href="http://knowyourmeme.com/memes/ordinary-muslim-man">About</a>)</li>
+<li>
+<a href="http://iome.me/pp">Paranoid parrot</a> (<a href="http://knowyourmeme.com/memes/paranoid-parrot">About</a>)</li>
+<li>
+<a href="http://iome.me/p">Pedobear</a> (<a href="http://knowyourmeme.com/memes/pedobear">About</a>)</li>
+<li>
+<a href="http://iome.me/pr">Philosoraptor</a> (<a href="http://knowyourmeme.com/memes/philosoraptor">About</a>)</li>
+<li>
+<a href="http://iome.me/plp">Pickup line panda</a> (<a href="http://knowyourmeme.com/memes/pickup-line-panda">About</a>)</li>
+<li>
+<a href="http://iome.me/pcb">PTSD clarinet boy</a> (<a href="http://knowyourmeme.com/memes/ptsd-clarinet-boy">About</a>)</li>
+<li>
+<a href="http://iome.me/pisep">Push it somewhere else patrick</a> (<a href="http://knowyourmeme.com/memes/push-it-somewhere-else-patrick">About</a>)</li>
+<li>
+<a href="http://iome.me/rst">Rasta science teacher</a> (<a href="http://knowyourmeme.com/memes/rasta-science-teacher">About</a>)</li>
+<li>
+<a href="http://iome.me/rr">Redneck Randal</a> (<a href="http://knowyourmeme.com/memes/redneck-randal">About</a>)</li>
+<li>
+<a href="http://iome.me/rra">Rich raven</a> (<a href="http://knowyourmeme.com/memes/rich-raven">About</a>)</li>
+<li>
+<a href="http://iome.me/rpg">Ridiculously photogenic guy</a> (<a href="http://knowyourmeme.com/memes/ridiculously-photogenic-guy-zeddie-little">About</a>)</li>
+<li><a href="http://iome.me/sbg">Sad birthday girl</a></li>
+<li>
+<a href="http://iome.me/sg">Scumbag girl</a> (<a href="http://knowyourmeme.com/memes/scumbag-girl-scumbag-stacy">About</a>)</li>
+<li>
+<a href="http://iome.me/ss">Scumbag Steve</a> (<a href="http://knowyourmeme.com/memes/scumbag-steve">About</a>)</li>
+<li>
+<a href="http://iome.me/sor">Sexually oblivious rhino</a> (<a href="http://knowyourmeme.com/memes/sexually-oblivious-rhino">About</a>)</li>
+<li>
+<a href="http://iome.me/ssm">Sheltering suburban mom</a> (<a href="http://knowyourmeme.com/memes/sheltering-suburban-mom">About</a>)</li>
+<li>
+<a href="http://iome.me/sp">Slowpoke</a> (<a href="http://knowyourmeme.com/memes/slowpoke">About</a>)</li>
+<li>
+<a href="http://iome.me/sawp">Socially awesome penguin</a> (<a href="http://knowyourmeme.com/memes/socially-awesome-penguin">About</a>)</li>
+<li>
+<a href="http://iome.me/saap">Socially awkward/awesome penguin</a> (<a href="http://www.quickmeme.com/Socially-Awkward-Awesome-Penguin/">About</a>)</li>
+<li>
+<a href="http://iome.me/sap">Socially awkward penguin</a> (<a href="http://knowyourmeme.com/memes/socially-awkward-penguin">About</a>)</li>
+<li>
+<a href="http://iome.me/sd">Stoner dog</a> (<a href="http://knowyourmeme.com/memes/stoner-dog">About</a>)</li>
+<li>
+<a href="http://iome.me/sbm">Successful black man</a> (<a href="http://knowyourmeme.com/memes/successful-black-man">About</a>)</li>
+<li>
+<a href="http://iome.me/sk">Success kid</a> (<a href="http://knowyourmeme.com/memes/i-hate-sandcastles-success-kid">About</a>)</li>
+<li>
+<a href="http://iome.me/scsi">Super cool ski instructor</a> (<a href="http://knowyourmeme.com/memes/super-cool-ski-instructor">About</a>)</li>
+<li>
+<a href="http://iome.me/tid">Tech impaired duck</a> (<a href="http://knowyourmeme.com/memes/technologically-impaired-duck">About</a>)</li>
+<li>
+<a href="http://iome.me/tmicitw">The most interesting cat in the world</a> (<a href="http://knowyourmeme.com/memes/the-most-interesting-cat-in-the-world">About</a>)</li>
+<li>
+<a href="http://iome.me/tmimitw">The most interesting man in the world</a> (<a href="http://knowyourmeme.com/memes/the-most-interesting-man-in-the-world">About</a>)</li>
+<li>
+<a href="http://iome.me/tws">Third world success</a> (<a href="http://knowyourmeme.com/memes/third-world-success">About</a>)</li>
+<li>
+<a href="http://iome.me/tdh">Too damn high</a> (<a href="http://knowyourmeme.com/memes/the-rent-is-too-damn-high-jimmy-mcmillan">About</a>)</li>
+<li>
+<a href="http://iome.me/uht">Unhelpful highschool teacher</a> (<a href="http://knowyourmeme.com/memes/unhelpful-high-school-teacher">About</a>)</li>
+<li>
+<a href="http://iome.me/xaty">X all the Y</a> (<a href="http://knowyourmeme.com/memes/x-all-the-y">About</a>)</li>
+<li>
+<a href="http://iome.me/yun">Y u no</a> (<a href="http://knowyourmeme.com/memes/y-u-no-guy">About</a>)</li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-30787821-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
