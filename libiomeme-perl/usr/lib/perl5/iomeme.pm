@@ -321,6 +321,11 @@ sub get_memes {
             template => $path . 'college-freshman.jpg',
             desc => "http://knowyourmeme.com/memes/uber-frosh-college-freshman"
         },
+        ch => {
+            name => "Captain hindsight",
+            template => $path . 'captain-hindsight.jpg',
+            desc => "http://knowyourmeme.com/memes/captain-hindsight"
+        },
         ck => {
             name => "Conspiracy Keanu",
             template => $path . 'conspiracy-keanu.jpg',
@@ -336,15 +341,15 @@ sub get_memes {
             template => $path . 'creepy-condescending-wonka.jpg',
             desc => "http://knowyourmeme.com/memes/condescending-wonka-creepy-wonka"
         },
-        cgpm => {
-            name => "Crazy girlfriend praying mantis",
-            template => $path . 'crazy-girlfriend-praying-mantis.jpg',
-            desc => "http://knowyourmeme.com/memes/crazy-girlfriend-praying-mantis"
-        },
         ccc => {
             name => "Cool chick Carol",
             template => $path . 'cool-chick-carol.jpg',
             desc => "http://knowyourmeme.com/memes/cool-chick-carol"
+        },
+        cgpm => {
+            name => "Crazy girlfriend praying mantis",
+            template => $path . 'crazy-girlfriend-praying-mantis.jpg',
+            desc => "http://knowyourmeme.com/memes/crazy-girlfriend-praying-mantis"
         },
         dsm => {
             name => "Dating site murderer",
@@ -565,14 +570,34 @@ sub get_memes {
             template => $path . 'success-kid.jpg',
             desc => "http://knowyourmeme.com/memes/i-hate-sandcastles-success-kid"
         },
+        sd => {
+            name => "Stoner dog",
+            template => $path . 'stoner-dog.jpg',
+            desc => "http://knowyourmeme.com/memes/stoner-dog"
+        },
+        sp => {
+            name => "Slowpoke",
+            template => $path . 'slowpoke.jpg',
+            desc => "http://knowyourmeme.com/memes/slowpoke"
+        },
         ss => {
             name => "Scumbag Steve",
             template => $path . 'scumbag-steve.jpg',
             desc => "http://knowyourmeme.com/memes/scumbag-steve"
         },
+        sap => {
+            name => "Socially awkward penguin",
+            template => $path . 'socially-awkward-penguin.jpg',
+            desc => "http://knowyourmeme.com/memes/socially-awkward-penguin"
+        },
         sbg => {
             name => "Sad birthday girl",
             template => $path . 'sad-birthday-girl.jpg',
+        },
+        sbm => {
+            name => "Successful black man",
+            template => $path . 'successful-black-man.jpg',
+            desc => "http://knowyourmeme.com/memes/successful-black-man"
         },
         sor => {
             name => "Sexually oblivious rhino",
@@ -584,35 +609,20 @@ sub get_memes {
             template => $path . 'sheltering-suburban-mom.jpg',
             desc => "http://knowyourmeme.com/memes/sheltering-suburban-mom"
         },
-        sp => {
-            name => "Slowpoke",
-            template => $path . 'slowpoke.jpg',
-            desc => "http://knowyourmeme.com/memes/slowpoke"
+        saap => {
+            name => "Socially awkward/awesome penguin",
+            template => $path . 'socially-awkward-awesome-penguin.jpg',
+            desc => "http://www.quickmeme.com/Socially-Awkward-Awesome-Penguin/"
         },
         sawp => {
             name => "Socially awesome penguin",
             template => $path . 'socially-awesome-penguin.jpg',
             desc => "http://knowyourmeme.com/memes/socially-awesome-penguin"
         },
-        saap => {
-            name => "Socially awkward/awesome penguin",
-            template => $path . 'socially-awkward-awesome-penguin.jpg',
-            desc => "http://www.quickmeme.com/Socially-Awkward-Awesome-Penguin/"
-        },
-        sap => {
-            name => "Socially awkward penguin",
-            template => $path . 'socially-awkward-penguin.jpg',
-            desc => "http://knowyourmeme.com/memes/socially-awkward-penguin"
-        },
-        sd => {
-            name => "Stoner dog",
-            template => $path . 'stoner-dog.jpg',
-            desc => "http://knowyourmeme.com/memes/stoner-dog"
-        },
-        sbm => {
-            name => "Successful black man",
-            template => $path . 'successful-black-man.jpg',
-            desc => "http://knowyourmeme.com/memes/successful-black-man"
+        scsi => {
+            name => "Super cool ski instructor",
+            template => $path . 'super-cool-ski-instructor.jpg',
+            desc => "http://knowyourmeme.com/memes/super-cool-ski-instructor"
         },
         tid => {
             name => "Tech impaired duck",
