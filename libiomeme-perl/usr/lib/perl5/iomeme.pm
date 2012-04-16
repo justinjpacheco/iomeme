@@ -366,6 +366,10 @@ sub get_memes {
             template => $path . 'dwight-schrute.jpg',
             desc => "http://knowyourmeme.com/memes/schrute-facts"
         },
+        dvt => {
+            name => "Domestic violence turtle",
+            template => $path . 'domestic-violence-turtle.jpg'
+        },
         ftsg => {
             name => "Family tech support guy",
             template => $path . 'family-tech-support-guy.jpg',
