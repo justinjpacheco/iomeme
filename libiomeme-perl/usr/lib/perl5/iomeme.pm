@@ -480,6 +480,10 @@ sub get_memes {
             template => $path . 'karate-kyle.jpg',
             desc => "http://knowyourmeme.com/memes/karate-kyle"
         },
+        ll => {
+            name => "Lonely Lenny",
+            template => $path . 'lonely-lenny.jpg'
+        },
         lpc => {
             name => "Lame pun coon",
             template => $path . 'lame-pun-coon.jpg',
