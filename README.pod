@@ -49,4 +49,4 @@ if you want something else
 
 =head1 Try it out!
 
-    http://localhost:1337/sk/installed+iomeme/it+works!
+    L<http://localhost:1337/sk/installed+iomeme/it+works!>
