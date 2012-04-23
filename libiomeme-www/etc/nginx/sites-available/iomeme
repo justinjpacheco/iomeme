@@ -4,13 +4,9 @@ upstream iomeme {
 
 server {
 
-  listen 80;
+  listen 1337;
 
-  server_name *.iome.me;
-
-  location ~ ^/$ {
-    rewrite ^ http://www.$host;
-  }
+  server_name localhost;
 
   location ~ ^/.*$ {
     proxy_read_timeout 300;

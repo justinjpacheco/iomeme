@@ -12,11 +12,11 @@ package:
 
 install:
 
-	make clean && make && sudo dpkg -i *.deb && make clean
+	make clean && make && dpkg -i *.deb && make clean
 
 uninstall:
 
-	sudo dpkg -P libiomeme-www
+	dpkg -P libiomeme-www
 
 clean:
 
