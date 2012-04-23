@@ -21,8 +21,6 @@ mentioned system/version.
 
 =head3 Build Time
 
-You will need the following commands available if you want to build and install the packages using B<make>
-
     sudo apt-get install make fakeroot
 
 =head1 Installation
