@@ -26,7 +26,8 @@ mentioned system/version.
 
 =head3 Build Time
 
-You will need the following commands available if you want to build and install the packages using B<make>
+You will need the following commands available if you want to build and install 
+the packages using B<make>
 
     make
     fakeroot
@@ -43,12 +44,13 @@ You will need the following commands available if you want to build and install 
     
 =head3 libiomeme-www
 
+The default nginx settings for iomeme listen on port 1337. 
+Update the B<listen> parameter in /etc/nginx/sites-available/iomeme 
+if you want something else
+
     cd libiomeme-www/
     sudo make install
 
-    # The default nginx settings for iomeme listen on port 1337.
-    # Update the "listen" parameter in /etc/nginx/sites-available/iomeme if
-    # you want something else
 
 
 =head1 Start services
