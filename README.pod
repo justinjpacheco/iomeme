@@ -1,4 +1,3 @@
-
 =head1 Note
 
 All packages are built and tested against Ubuntu 11.10 and 12.04. While its
@@ -26,6 +25,8 @@ mentioned system/version.
     libcache-fastmmap-perl
 
 =head3 Build Time
+
+You will need the following commands available if you want to build and install the packages using B<make>
 
     make
     fakeroot
