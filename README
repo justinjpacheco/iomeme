@@ -1,0 +1,64 @@
+=head1 Prerequisites
+
+=head2 System
+=over
+=item Ubuntu 11.10 or Ubuntu 12.04
+=back
+
+All packages are built and tested against Ubuntu 11.10 and 12.04. While its
+entirely possible to run this software on any Linux distro, these instructions
+are based on the assumption that you will be installing them on the above
+mentioned system/version.
+
+=head2 libiomeme-perl
+=over
+=item libimager-perl
+=item libmoose-perl
+=back
+
+=head2 libiomeme-www
+=over
+=item nginx
+=item libiomeme-perl
+=item libmojolicious-perl
+=item libcache-fastmmap-perl
+=back
+
+=head2 Building Packages
+=over
+=item make
+=item fakeroot
+=item dpkg-deb
+=item dpkg
+=back
+
+=head1 Installation
+
+=head2 libiomeme-perl
+=pod
+    cd libiomeme-perl/
+    sudo make install
+=cut
+
+=head2 libiomeme-www
+=pod
+    cd libiomeme-www/
+    sudo make install
+
+    # The default nginx settings for iomeme listen on port 1337.
+    # Update the "listen" parameter in /etc/nginx/sites-available/iomeme if
+    # you want something else
+=cut
+
+
+=head1 Start services
+=pod
+    sudo service iomeme start
+    sudo service nginx start
+=cut
+
+
+=head1 Try it out!
+=pod
+    http://localhost:1337/sk/installed+iomeme/it+works!
+=cut
