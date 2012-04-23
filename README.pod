@@ -19,13 +19,13 @@ mentioned system/version.
 
     sudo apt-get install nginx libmojolicious-perl libcache-fastmmap-perl
 
-=head3 Build Time
-
-You will need the following commands available if you want to build and install the packages using B<make>
-
-    sudo apt-get install make fakeroot
 
 =head1 Installation
+
+If you are installing iomeme using B<make install>, you will need to
+have B<make> and B<fakeroot> installed
+
+    sudo apt-get install make fakeroot
 
 =head3 libiomeme-perl
 
