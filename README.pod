@@ -1,13 +1,17 @@
-=head1 Prerequisites
 
-=head3 System
-
-    Ubuntu 11.10 or Ubuntu 12.04
+=head1 Note
 
 All packages are built and tested against Ubuntu 11.10 and 12.04. While its
 entirely possible to run this software on any Linux distro, these instructions
 are based on the assumption that you will be installing them on the above
 mentioned system/version.
+
+
+=head1 Prerequisites
+
+=head3 System
+
+    Ubuntu 11.10 or Ubuntu 12.04
 
 =head3 libiomeme-perl
 
