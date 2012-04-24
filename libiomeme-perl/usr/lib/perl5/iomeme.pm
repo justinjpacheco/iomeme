@@ -529,6 +529,11 @@ sub get_memes {
             template => $path . 'pedobear.jpg',
             desc => "http://knowyourmeme.com/memes/pedobear"
         },
+        pf => {
+            name => "Picard facepalm",
+            template => $path . 'picard-facepalm.jpg',
+            desc => "http://knowyourmeme.com/memes/people/jean-luc-picard"
+        },
         pp => {
             name => "Paranoid parrot",
             template => $path . 'paranoid-parrot.jpg',
