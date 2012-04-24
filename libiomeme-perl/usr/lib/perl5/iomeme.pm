@@ -316,6 +316,11 @@ sub get_memes {
             template => $path . 'butthurt-dweller.jpg',
             desc => "http://knowyourmeme.com/memes/butthurt-dweller-gordo-granudo"
         },
+        bor => {
+            name => "Bill O'Reilly Rant",
+            template => $path . 'bill-oreilly-rant.jpg',
+            desc => "http://knowyourmeme.com/memes/bill-oreilly-rant"
+        },
         cc => {
             name => "Chemistry cat",
             template => $path . 'chemistry-cat.jpg',
@@ -356,11 +361,6 @@ sub get_memes {
             template => $path . 'crazy-girlfriend-praying-mantis.jpg',
             desc => "http://knowyourmeme.com/memes/crazy-girlfriend-praying-mantis"
         },
-        dsm => {
-            name => "Dating site murderer",
-            template => $path . 'dating-site-murderer.jpg',
-            desc => "http://knowyourmeme.com/memes/dating-site-murderer-good-intentions-axe-murderer"
-        },
         dd => {
             name => "Depression dog",
             template => $path . 'depression-dog.jpg',
@@ -375,6 +375,11 @@ sub get_memes {
             name => "Dwight Schrute",
             template => $path . 'dwight-schrute.jpg',
             desc => "http://knowyourmeme.com/memes/schrute-facts"
+        },
+        dsm => {
+            name => "Dating site murderer",
+            template => $path . 'dating-site-murderer.jpg',
+            desc => "http://knowyourmeme.com/memes/dating-site-murderer-good-intentions-axe-murderer"
         },
         dvt => {
             name => "Domestic violence turtle",
