@@ -415,15 +415,20 @@ sub get_memes {
             template => $path . 'futurama-fry.jpg',
             desc => "http://knowyourmeme.com/memes/futurama-fry-not-sure-if-x"
         },
-        fwp => {
-            name => "First world problems",
-            template => $path . 'first-world-problems.jpg',
-            desc => "http://knowyourmeme.com/memes/first-world-problems"
+        fp => {
+            name => "Picard facepalm",
+            template => $path . 'picard-facepalm.jpg',
+            desc => "http://knowyourmeme.com/memes/people/jean-luc-picard"
         },
         fz => {
             name => "Futurama Zoidberg",
             template => $path . 'futurama-zoidberg.jpg',
             desc => "http://knowyourmeme.com/memes/futurama-zoidberg-why-not-zoidberg"
+        },
+        fwp => {
+            name => "First world problems",
+            template => $path . 'first-world-problems.jpg',
+            desc => "http://knowyourmeme.com/memes/first-world-problems"
         },
         ggg => {
             name => "Good guy Greg",
@@ -528,11 +533,6 @@ sub get_memes {
             name => "Pedobear",
             template => $path . 'pedobear.jpg',
             desc => "http://knowyourmeme.com/memes/pedobear"
-        },
-        pf => {
-            name => "Picard facepalm",
-            template => $path . 'picard-facepalm.jpg',
-            desc => "http://knowyourmeme.com/memes/people/jean-luc-picard"
         },
         pp => {
             name => "Paranoid parrot",
