@@ -628,6 +628,11 @@ sub get_memes {
             template => $path . 'sheltering-suburban-mom.jpg',
             desc => "http://knowyourmeme.com/memes/sheltering-suburban-mom"
         },
+        swa => {
+            name => "Say what again",
+            template => $path . 'say-what-again.jpg',
+            desc => "http://knowyourmeme.com/memes/say-what-again"
+        },
         saap => {
             name => "Socially awkward/awesome penguin",
             template => $path . 'socially-awkward-awesome-penguin.jpg',
