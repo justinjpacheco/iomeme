@@ -430,6 +430,10 @@ sub get_memes {
             template => $path . 'first-world-problems.jpg',
             desc => "http://knowyourmeme.com/memes/first-world-problems"
         },
+        fsc => {
+            name => "Friend stealing credit",
+            template => $path . 'friend-stealing-credit.jpg'
+        },
         ggg => {
             name => "Good guy Greg",
             template => $path . 'good-guy-greg.jpg',
