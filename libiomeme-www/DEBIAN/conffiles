@@ -1,2 +1,3 @@
 /etc/nginx/sites-available/iomeme
 /etc/iomeme/hypnotoad.conf
+/etc/iomeme/iomeme.yaml
