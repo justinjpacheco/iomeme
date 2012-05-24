@@ -713,7 +713,7 @@ sub _build_font {
     my $self = shift;
     my $path = '/usr/share/fonts/iomeme/';
     my $fontfile = 'impact.ttf';
-    my $font = Imager::Font->new(file => $path . $fontfile);
+    my $font = Imager::Font->new(file => $path . $fontfile, aa => 1);
     return $font;
 }
 
