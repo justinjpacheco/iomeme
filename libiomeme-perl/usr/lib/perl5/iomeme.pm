@@ -175,7 +175,7 @@ sub get_string_parameters {
     my $image_height = $image->getheight();
     my $font = $self->font();
 
-    my $font_size = 50;
+    my $font_size = 42;
     my $sheight = undef;
     my $strprm = {};
 
