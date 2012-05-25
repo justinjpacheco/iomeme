@@ -385,6 +385,10 @@ sub get_memes {
             name => "Domestic violence turtle",
             template => $path . 'domestic-violence-turtle.jpg'
         },
+        ec => {
+            name => "Eye contact",
+            template => $path . 'eye-contact.jpg'
+        },
         ftsg => {
             name => "Family tech support guy",
             template => $path . 'family-tech-support-guy.jpg',
