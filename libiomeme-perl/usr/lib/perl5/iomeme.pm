@@ -473,10 +473,6 @@ sub get_memes {
             template => $path . 'hipster-kitty.jpg',
             desc => "http://knowyourmeme.com/memes/hipster-kitty",
         },
-        ic => {
-            name => "Eye contact",
-            template => $path . 'eye-contact.jpg'
-        },
         in => {
             name => "Imminent Ned",
             template => $path . 'imminent-ned.jpg',
