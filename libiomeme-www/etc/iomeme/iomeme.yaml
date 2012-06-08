@@ -1,0 +1,10 @@
+
+twitter:
+    twitter_enabled : 0
+    twitter_message : "New meme at iome.me - "
+
+    consumer_key        : ' '
+    consumer_secret     : ' '
+    access_token        : ' '
+    access_token_secret : ' '
+
