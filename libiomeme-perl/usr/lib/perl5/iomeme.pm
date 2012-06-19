@@ -266,6 +266,10 @@ sub get_memes {
             template => $path . 'advice-god.jpg',
             desc => "http://knowyourmeme.com/memes/advice-god"
         },
+        ap => {
+            name => "Annoyed Picard",
+            template => $path . 'annoyed-picard.jpg',
+        },
         acf => {
             name => "Annoying childhood friend",
             template => $path . 'annoying-childhood-friend.jpg',
@@ -285,6 +289,14 @@ sub get_memes {
             name => "Art student owl",
             template => $path . 'art-student-owl.jpg',
             desc => "http://knowyourmeme.com/memes/art-student-owl"
+        },
+        aitoo => {
+            name => "Am I the only one",
+            template => $path . 'am-i-the-only-one.jpg',
+        },
+        apcr => {
+            name => "Almost politically correct redneck",
+            template => $path . 'almost-politically-correct-redneck.jpg',
         },
         bac => {
             name => "Bad advice cat",
@@ -493,6 +505,10 @@ sub get_memes {
             template => $path . 'idiot-nerd-girl.jpg',
             desc => "http://knowyourmeme.com/memes/idiot-nerd-girl"
         },
+        itbc => {
+            name => "Inappropriate timing Bill Clinton",
+            template => $path . 'inappropriate-timing-bill-clinton.jpg',
+        },
         jd => {
             name => "Joseph Ducreux",
             template => $path . 'joseph-ducreux.jpg',
@@ -522,20 +538,28 @@ sub get_memes {
             template => $path . 'net-noob.jpg',
             desc => "http://knowyourmeme.com/memes/lonely-computer-guy-net-noob"
         },
-        odns => {
-            name => "One does not simply",
-            template => $path . 'one-does-not-simply.jpg',
-            desc => "http://knowyourmeme.com/memes/one-does-not-simply-walk-into-mordor"
-        },
         og => {
             name => "Office grizzly",
             template => $path . 'office-grizzly.jpg',
             desc => "http://knowyourmeme.com/memes/office-grizzly"
         },
+        oag => {
+            name => "Overly attached girlfriend",
+            template => $path . 'overly-attached-girlfriend.jpg',
+        },
+        oep => {
+            name => "Over educated problems",
+            template => $path . 'over-educated-problems.jpg',
+        },
         omm => {
             name => "Ordinary muslim man",
             template => $path . 'ordinary-muslim-man.jpg',
             desc => "http://knowyourmeme.com/memes/ordinary-muslim-man"
+        },
+        odns => {
+            name => "One does not simply",
+            template => $path . 'one-does-not-simply.jpg',
+            desc => "http://knowyourmeme.com/memes/one-does-not-simply-walk-into-mordor"
         },
         p => {
             name => "Pedobear",
@@ -567,25 +591,29 @@ sub get_memes {
             template => $path . 'put-it-somewhere-else-patrick.jpg',
             desc => "http://knowyourmeme.com/memes/push-it-somewhere-else-patrick"
         },
-        rst => {
-            name => "Rasta science teacher",
-            template => $path . 'rasta-science-teacher.jpg',
-            desc => "http://knowyourmeme.com/memes/rasta-science-teacher"
-        },
         rr => {
             name => "Redneck Randal",
             template => $path . 'redneck-randal.jpg',
             desc => "http://knowyourmeme.com/memes/redneck-randal"
+        },
+        rt => {
+            name => "Regretful toddler",
+            template => $path . 'regretful-toddler.jpg'
+        },
+        rpg => {
+            name => "Ridiculously photogenic guy",
+            template => $path . 'ridiculously-photogenic-guy.jpg',
+            desc => "http://knowyourmeme.com/memes/ridiculously-photogenic-guy-zeddie-little"
         },
         rra => {
             name => "Rich raven",
             template => $path . 'rich-raven.jpg',
             desc => "http://knowyourmeme.com/memes/rich-raven"
         },
-        rpg => {
-            name => "Ridiculously photogenic guy",
-            template => $path . 'ridiculously-photogenic-guy.jpg',
-            desc => "http://knowyourmeme.com/memes/ridiculously-photogenic-guy-zeddie-little"
+        rst => {
+            name => "Rasta science teacher",
+            template => $path . 'rasta-science-teacher.jpg',
+            desc => "http://knowyourmeme.com/memes/rasta-science-teacher"
         },
         sg => {
             name => "Scumbag girl",
