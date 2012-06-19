@@ -600,6 +600,10 @@ sub get_memes {
             name => "Regretful toddler",
             template => $path . 'regretful-toddler.jpg'
         },
+        rzt => {
+            name => "Rez Trisha",
+            template => $path . 'rez-trisha.jpg'
+        },
         rpg => {
             name => "Ridiculously photogenic guy",
             template => $path . 'ridiculously-photogenic-guy.jpg',
