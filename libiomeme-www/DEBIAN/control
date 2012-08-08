@@ -4,7 +4,6 @@ Section: perl
 Architecture: all
 Depends: nginx,
          libiomeme-perl,
-         libmojolicious-perl,
          libcache-fastmmap-perl
 Maintainer: Justin Pacheco (justinjpacheco@gmail.com)
 Description: website for iomeme (yet another meme generator)
