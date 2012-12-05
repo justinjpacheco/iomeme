@@ -1,13 +1,12 @@
 #!/bin/sh
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-DAEMON=/usr/bin/hypnotoad
+DAEMON=/usr/local/bin/hypnotoad
 NAME=iomeme
 
-DAEMON_CNF='--config /etc/iomeme/hypnotoad.conf'
 DAEMON_SCRIPT='/usr/share/nginx/www/iome.me/scripts/iomeme.pl'
-DAEMON_START="$DAEMON $DAEMON_CNF $DAEMON_SCRIPT"
-DAEMON_STOP="$DAEMON $DAEMON_CNF --stop $DAEMON_SCRIPT"
+DAEMON_START="$DAEMON $DAEMON_SCRIPT"
+DAEMON_STOP="$DAEMON --stop $DAEMON_SCRIPT"
 
 
 test -x $DAEMON || exit 0
