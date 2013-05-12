@@ -8,6 +8,8 @@ server {
 
   server_name localhost;
 
+  rewrite ^/$ http://www.iome.me permanent;
+
   location ~ ^/.*$ {
     proxy_read_timeout 300;
     proxy_pass http://iomeme;
