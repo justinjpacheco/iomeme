@@ -465,6 +465,11 @@ sub get_memes {
             template => $path . 'grandma-finds-the-internet.jpg',
             desc => "http://knowyourmeme.com/memes/internet-grandma-surprise"
         },
+        gcat => {
+            name => "Grumpy Cat",
+            template => $path . 'grumpy-cat.jpg',
+            desc => "http://knowyourmeme.com/memes/grumpy-cat"
+        },
         htd => {
             name => "Helpful Tyler Durden",
             template => $path . 'helpful-tyler-durden.jpg',
