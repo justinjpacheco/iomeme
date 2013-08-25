@@ -1,9 +1,0 @@
-Package: libiomeme-www
-Version: 0.01
-Section: perl
-Architecture: all
-Depends: nginx,
-         libiomeme-perl,
-         libcache-fastmmap-perl
-Maintainer: Justin Pacheco (justinjpacheco@gmail.com)
-Description: website for iomeme (yet another meme generator)

@@ -1,8 +1,0 @@
-Package: libiomeme-perl
-Version: 0.01
-Section: perl
-Architecture: all
-Depends: libimager-perl,
-         libmoose-perl
-Maintainer: Justin Pacheco (justinjpacheco@gmail.com)
-Description: yet another meme generator
