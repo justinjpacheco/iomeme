@@ -86,13 +86,24 @@ sub render_meme {
 
   my $key = b64_encode("$meme/$top/$bottom");
 
+  # build the meme if not in the cache
+  #
   if (!$cache->get($key)) {
 
-    # build the meme
-    #
     my $mb = MemeBuilder->new(file => $filepath);
-    $mb->top(uc($top));
-    $mb->bottom(uc($bottom));
+
+    # replace + with spaces
+    #
+    $top =~ s/\+/ /g;
+    $bottom =~ s/\+/ /g;
+
+    # uppercase
+    #
+    $top = uc($top);
+    $bottom = uc($bottom);
+
+    $mb->top($top);
+    $mb->bottom($bottom);
 
     $cache->set($key,[$mb->render,$mb->image_type]);
 
