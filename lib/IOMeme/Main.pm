@@ -6,6 +6,9 @@ use Mojo::Cache;
 use Data::Dumper;
 use MemeBuilder;
 
+use Try::Tiny;
+use Net::Twitter::Lite::WithAPIv1_1;
+
 my $cache = Mojo::Cache->new();
 
 sub root {
@@ -86,6 +89,10 @@ sub render_meme {
 
   my $key = b64_encode("$meme/$top/$bottom");
 
+  # build url that includes base64 encoding
+  #
+  my $url = $self->url_for('/')->query(m => $key);
+
   # build the meme if not in the cache
   #
   if (!$cache->get($key)) {
@@ -107,11 +114,24 @@ sub render_meme {
 
     $cache->set($key,[$mb->render,$mb->image_type]);
 
-  }
+    if ($config->{twitter}->{enabled}) {
 
-  # build url that includes base64 encoding
-  #
-  my $url = $self->url_for('/')->query(m => $key);
+      my $nt = Net::Twitter::Lite::WithAPIv1_1->new(
+        consumer_key        => $config->{twitter}->{'consumer_key'},
+        consumer_secret     => $config->{twitter}->{'consumer_secret'},
+        access_token        => $config->{twitter}->{'access_token'},
+        access_token_secret => $config->{twitter}->{'access_token_secret'}
+      );
+
+      try {
+        $nt->update($config->{twitter}->{'message'} . $url->to_abs());
+      } catch {
+        $self->app->log->warn("Posting meme to twitter failed: $_");
+      }
+
+    }
+
+  }
 
   # redirect to a url that isn't easy to read
   #
