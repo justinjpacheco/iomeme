@@ -2,3 +2,5 @@
 output.*
 build/
 *.deb
+log/*
+script/*.pid
