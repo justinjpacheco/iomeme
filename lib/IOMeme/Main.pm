@@ -114,7 +114,7 @@ sub render_meme {
 
     $cache->set($key,[$mb->render,$mb->image_type]);
 
-    if ($config->{twitter}->{enabled}) {
+    if ($config->{twitter}->{enabled} && ($top || $bottom)) {
 
       my $nt = Net::Twitter::Lite::WithAPIv1_1->new(
         consumer_key        => $config->{twitter}->{'consumer_key'},
@@ -124,7 +124,11 @@ sub render_meme {
       );
 
       try {
-        $nt->update($config->{twitter}->{'message'} . $url->to_abs());
+        $nt->update(
+          $config->{twitter}->{'message'} .
+          $url->to_abs() .
+          " #$meme"
+        );
       } catch {
         $self->app->log->warn("Posting meme to twitter failed: $_");
       }
