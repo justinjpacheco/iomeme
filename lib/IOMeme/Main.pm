@@ -3,6 +3,7 @@ use Mojo::Base 'Mojolicious::Controller';
 use Mojo::Util qw(b64_encode b64_decode);
 use Mojo::Cache;
 
+use Encode qw(encode);
 use Data::Dumper;
 use MemeBuilder;
 
@@ -87,7 +88,7 @@ sub render_meme {
     return;
   }
 
-  my $key = b64_encode("$meme/$top/$bottom");
+  my $key = b64_encode(encode('UTF-8',"$meme/$top/$bottom"));
 
   # build url that includes base64 encoding
   #
@@ -130,7 +131,7 @@ sub render_meme {
         $nt->update(
           $config->{twitter}->{'message'} .
           "http://iome.me" . $url .
-          " #" . $hashtag
+          " #" . lc($hashtag)
         );
       } catch {
         $self->app->log->warn("Posting meme to twitter failed: $_");
