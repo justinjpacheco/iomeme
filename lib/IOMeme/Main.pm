@@ -24,6 +24,7 @@ sub root {
 
       my ($image_data,$image_type) = @{$cache->get($key)};
       $self->render(data => $image_data, format => $image_type);
+      return;
 
     } else {
 
@@ -38,14 +39,15 @@ sub root {
       # redirect and hope this works ;)
       #
       $self->redirect_to($url);
+      return;
 
     }
-
-    return;
 
   }
 
   $self->redirect_to('http://www.iome.me');
+  return;
+  
 }
 
 sub get_memes {
