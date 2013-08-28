@@ -1,14 +1,11 @@
 package IOMeme::Main;
 use Mojo::Base 'Mojolicious::Controller';
-use Mojo::Util qw(b64_encode b64_decode);
+use Mojo::Util qw(b64_encode b64_decode encode);
 use Mojo::Cache;
-
-use Encode qw(encode);
 use Data::Dumper;
-use MemeBuilder;
-
 use Try::Tiny;
 use Net::Twitter::Lite::WithAPIv1_1;
+use MemeBuilder;
 
 my $cache = Mojo::Cache->new();
 
