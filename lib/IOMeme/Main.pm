@@ -44,7 +44,7 @@ sub root {
 
   $self->redirect_to('http://www.iome.me');
   return;
-  
+
 }
 
 sub get_memes {
