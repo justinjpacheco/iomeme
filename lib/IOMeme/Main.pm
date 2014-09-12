@@ -1,50 +1,10 @@
 package IOMeme::Main;
 use Mojo::Base 'Mojolicious::Controller';
-use Mojo::Util qw(b64_encode b64_decode encode);
-use Mojo::Cache;
-use Data::Dumper;
-use Try::Tiny;
-use Net::Twitter::Lite::WithAPIv1_1;
 use MemeBuilder;
-
-my $cache = Mojo::Cache->new();
 
 sub root {
   my $self = shift;
-
-  my $params = $self->req->params->to_hash;
-  my $key = $params->{m};
-
-  if ($key) {
-
-    if ($cache->get($key)) {
-
-      my ($image_data,$image_type) = @{$cache->get($key)};
-      $self->render(data => $image_data, format => $image_type);
-      return;
-
-    } else {
-
-      # decode the key back into the path we build it from
-      #
-      my $path = b64_decode($key);
-
-      # build a new url with the old path
-      #
-      my $url = $self->url_for("/$path");
-
-      # redirect and hope this works ;)
-      #
-      $self->redirect_to($url);
-      return;
-
-    }
-
-  }
-
   $self->redirect_to('http://www.iome.me');
-  return;
-
 }
 
 sub get_memes {
@@ -87,64 +47,24 @@ sub render_meme {
     return;
   }
 
-  my $key = b64_encode(encode('UTF-8',"$meme/$top/$bottom"));
-
-  # build url that includes base64 encoding
+  # build the meme
   #
-  my $url = $self->url_for('/')->query(m => $key);
+  my $mb = MemeBuilder->new(file => $filepath);
 
-  # build the meme if not in the cache
+  # replace + with spaces
   #
-  if (!$cache->get($key)) {
+  $top =~ s/\+/ /g;
+  $bottom =~ s/\+/ /g;
 
-    my $mb = MemeBuilder->new(file => $filepath);
-
-    # replace + with spaces
-    #
-    $top =~ s/\+/ /g;
-    $bottom =~ s/\+/ /g;
-
-    # uppercase
-    #
-    $top = uc($top);
-    $bottom = uc($bottom);
-
-    $mb->top($top);
-    $mb->bottom($bottom);
-
-    $cache->set($key,[$mb->render,$mb->image_type]);
-
-    if ($config->{twitter}->{enabled} && ($top || $bottom)) {
-
-      my $nt = Net::Twitter::Lite::WithAPIv1_1->new(
-        consumer_key        => $config->{twitter}->{'consumer_key'},
-        consumer_secret     => $config->{twitter}->{'consumer_secret'},
-        access_token        => $config->{twitter}->{'access_token'},
-        access_token_secret => $config->{twitter}->{'access_token_secret'}
-      );
-
-      my $hashtag = $memes->{$meme}->{name};
-      $hashtag =~ s/ //g;
-
-      try {
-        $nt->update(
-          $config->{twitter}->{'message'} .
-          "http://iome.me" . $url .
-          " #" . lc($hashtag)
-        );
-      } catch {
-        $self->app->log->warn("Posting meme to twitter failed: $_");
-      }
-
-    }
-
-  }
-
-  # redirect to a url that isn't easy to read
+  # uppercase
   #
-  $self->redirect_to($url);
+  $top = uc($top);
+  $bottom = uc($bottom);
 
-  return;
+  $mb->top($top);
+  $mb->bottom($bottom);
+
+  $self->render(data => $mb->render, format => $mb->image_type);
 }
 
 1;
