@@ -1,14 +1,5 @@
-sudo apt-get install nginx
-sudo apt-get install build-essential 
-sudo apt-get install libfreetype6-dev
-sudo apt-get install libjpeg-dev
-sudo apt-get install libssl-dev
-sudo cpanm EV IO::Socket::IP IO::Socket::SSL
-sudo cpanm Mojolicious
-sudo cpanm Try::Tiny
-sudo cpanm Net::Twitter::Lite::WithAPIv1_1
-sudo cpanm Imager
-sudo cpanm Imager::File::JPEG
+sudo apt-get install nginx build-essential libfreetype6-dev libjpeg-dev libssl-dev
+sudo cpanm EV IO::Socket::IP IO::Socket::SSL Mojolicious Imager Imager::File::JPEG
 
 hypnotoad script/iomeme 
 sudo service nginx start
